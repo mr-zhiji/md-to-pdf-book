@@ -398,7 +398,7 @@ def build_full_html(chapters, config):
 # ─────────────────────────────────────────────────────────────
 
 def render_pdf(html_path, pdf_path):
-    """Convert HTML file to PDF using Chrome --headless --print-to-pdf.
+    """Convert HTML file to PDF using Chrome --headless=new --print-to-pdf.
 
     Chrome respects @page CSS rules (size, margins, margin boxes),
     producing output identical to in-browser rendering.
@@ -421,7 +421,7 @@ def render_pdf(html_path, pdf_path):
 
     cmd = [
         chrome,
-        "--headless",
+        "--headless=new",
         "--disable-gpu",
         "--no-sandbox",
         "--disable-software-rasterizer",
